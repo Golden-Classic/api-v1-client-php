@@ -1,0 +1,24 @@
+<？
+
+$ GUID = “GUID_HERE” ; 
+$ firstpassword = “PASSWORD_HERE” ; 
+$ secondpassword = “PASSWORD_HERE” ; 
+$ amounta = “10000000” ; 
+$ amountb = “40萬人是” ; 
+$地址a = “1A8JiWcwvpY7tAopUkSnGuEYHmzGYfZPiq” ; 
+$ addressb = “1ExD2je6UNxL5oSu6iPUhn9Ta7UrN8bjBy” ; 
+$收件人= 用urlencode （'{    
+                  “' 。$地址a 。'”：“ 。$ amounta 。'，
+                  “' 。$ addressb 。'”：“ 。$ amountb 。“
+               }' ）;
+
+$ json_url = “？HTTP：//本地主機：3000 /商戶/ $ GUID / sendmany密碼= $ firstpassword＆second_password = $ secondpassword與收件人= $收件人” ; 
+
+$ json_data = 的file_get_contents （$ json_url ）;
+
+$ json_feed = json_decode （$ json_data ）;
+
+$消息= $ json_feed - > 消息; 
+$ TxID添加= $ json_feed - > tx_hash ;
+
+？>
